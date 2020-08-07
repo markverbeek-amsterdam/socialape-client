@@ -12,7 +12,15 @@ import Typography from '@material-ui/core/Typography';
 
 const styles = {
     card: {
-        display: 'flex'
+        display: 'flex',
+        marginBottom: 20
+    },
+    image: {
+        minWidth: 200
+    },
+    content: {
+        padding: 25,
+        objectFit: 'cover'
     }
 }
 
@@ -31,11 +39,12 @@ export class Scream extends Component {
             }
         } = this.props
         return (
-            <Card>
+            <Card className={classes.card}>
                 <CardMedia
                     image={userImage}
-                    title="Profile image" />
-                <CardContent>
+                    title="Profile image" 
+                    className={classes.image}/>
+                <CardContent class={classes.content}>
                     <Typography
                         variant="h5"
                         component={Link}
