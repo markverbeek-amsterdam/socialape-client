@@ -20,7 +20,12 @@ import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
 
+import axios from 'axios';
+
 const theme = createMuiTheme(themeFile);
+
+axios.defaults.baseURL =
+  "https://europe-west1-socialape-d3a4c.cloudfunctions.net/api";
 
 let authenticated;
 

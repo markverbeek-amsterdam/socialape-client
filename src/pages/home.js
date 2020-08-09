@@ -10,7 +10,7 @@ export class home extends Component {
     }
     componentDidMount(){
         axios
-        .get('https://europe-west1-socialape-d3a4c.cloudfunctions.net/api/screams')
+        .get('/screams')
         .then(res => {
             this.setState({
                 screams: res.data

@@ -40,7 +40,7 @@ export class signup extends Component {
     };
     axios
       .post(
-        "https://europe-west1-socialape-d3a4c.cloudfunctions.net/api/signup",
+        "/signup",
         newUserData
       )
       .then((res) => {

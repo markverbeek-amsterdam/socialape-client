@@ -21,39 +21,16 @@ export class login extends Component {
     this.state = {
       email: "",
       password: "",
-      loading: false,
       errors: {},
     };
   }
   handleSubmit = (event) => {
     event.preventDefault();
-    this.setState({
-      loading: true,
-    });
     const userData = {
       email: this.state.email,
       password: this.state.password,
     };
-    axios
-      .post(
-        "https://europe-west1-socialape-d3a4c.cloudfunctions.net/api/login",
-        userData
-      )
-      .then((res) => {
-        console.log(res.data);
-        localStorage.setItem("FBIdToken", `Bearer ${res.data.token}`);
-        this.setState({
-          loading: false,
-        });
-        this.props.history.push("/");
-      })
-      .catch((err) => {
-        console.log(err);
-        this.setState({
-          errors: err.response.data,
-          loading: false,
-        });
-      });
+    
   };
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
