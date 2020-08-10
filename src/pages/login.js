@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import PropTypes from "prop-types";
 import AppIcon from "../images/apeicon.png";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 //MUI Stuff
@@ -19,7 +18,7 @@ import { loginUser} from '../redux/actions/userActions';
 
 const styles = themeFile;
 
-export class login extends Component {
+ class login extends Component {
   constructor() {
     super();
     this.state = {
@@ -39,7 +38,7 @@ componentWillReceiveProps(nextProps){
     event.preventDefault();
     const userData = {
       email: this.state.email,
-      password: this.state.password,
+      password: this.state.password
     };
     this.props.loginUser(userData, this.props.history);
     
