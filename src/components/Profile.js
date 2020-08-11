@@ -17,6 +17,7 @@ import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
 import EditIcon from '@material-ui/icons/Edit'
+import KeyboardReturn from '@material-ui/icons/KeyboardReturn'
 
 //Redux stuff
 import { connect } from "react-redux";
@@ -81,6 +82,9 @@ class Profile extends Component {
   handleEditPicture= () => {
     const fileInput = document.getElementById('imageInput');
     fileInput.click();
+  };
+  handleLogout = () => {
+    this.props.logoutUser();
   }
   render() {
     const {
@@ -141,6 +145,11 @@ class Profile extends Component {
               {"  "}
               <span>Joined {dayjs(createdAt).format("MMM YYYY")}</span>
             </div>
+            <Tooltip title="Logout" placement="top">
+              <IconButton onClick={this.handleLogout}>
+                <KeyboardReturn color="primary"/>
+              </IconButton>
+            </Tooltip>
           </div>
         </Paper>
       ) : (
