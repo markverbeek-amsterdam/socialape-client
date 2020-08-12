@@ -10,14 +10,18 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
-import themeFile from "../util/theme";
+
 
 //Redux stuff
 import { connect } from 'react-redux';
 import {signupUser} from '../redux/actions/userActions';
 
 
-const styles = themeFile;
+const styles = (theme) => ({
+  ...theme.spread
+  }
+); 
+
 
 class signup extends Component {
   constructor() {

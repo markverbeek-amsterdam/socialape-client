@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
+import EditDetails from './EditDetails';
 
 //MUI Stuff
 import Button from "@material-ui/core/Button";
@@ -23,8 +24,8 @@ import KeyboardReturn from '@material-ui/icons/KeyboardReturn'
 import { connect } from "react-redux";
 import { logoutUser, uploadImage } from '../redux/actions/userActions'
 
-
 const styles = (theme) => ({
+  ...theme.spread,
   paper: {
     padding: 20,
   },
@@ -69,8 +70,11 @@ const styles = (theme) => ({
     "& a": {
       margin: "20px 10px",
     },
-  },
+  }
+
 });
+
+
 
 class Profile extends Component {
   handleImageChange = (event) => {
@@ -150,6 +154,7 @@ class Profile extends Component {
                 <KeyboardReturn color="primary"/>
               </IconButton>
             </Tooltip>
+            <EditDetails/>
           </div>
         </Paper>
       ) : (
