@@ -18,7 +18,10 @@ import EditIcon from '@material-ui/icons/Edit';
 const styles = (theme) => ({
   ...theme.spread,
   button: {
-    float: 'right'
+    float: 'right',
+  },
+  textField: {
+    margin: '10px auto 10px auto'
   }
 });
 

@@ -13,8 +13,7 @@ export default {
       contrastText: '#fff'
     }
   },
-
-  restOfTheme: {
+  
     typography: {
       useNextVariants: true
     },
@@ -96,7 +95,7 @@ export default {
         margin: '20px 10px'
       }
     }
-  }
+  
 
   
 };
