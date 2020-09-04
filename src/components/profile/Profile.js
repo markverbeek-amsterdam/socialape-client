@@ -3,72 +3,71 @@ import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
 import { Link } from "react-router-dom";
 import dayjs from "dayjs";
-import EditDetails from './EditDetails';
+import EditDetails from "./EditDetails";
 
 //MUI Stuff
 import Button from "@material-ui/core/Button";
 import MuiLink from "@material-ui/core/Link";
 import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip'
+import IconButton from "@material-ui/core/IconButton";
+import Tooltip from "@material-ui/core/Tooltip";
 
 //Icons
 import LocationOn from "@material-ui/icons/LocationOn";
 import LinkIcon from "@material-ui/icons/Link";
 import CalendarToday from "@material-ui/icons/CalendarToday";
-import EditIcon from '@material-ui/icons/Edit'
-import KeyboardReturn from '@material-ui/icons/KeyboardReturn'
+import EditIcon from "@material-ui/icons/Edit";
+import KeyboardReturn from "@material-ui/icons/KeyboardReturn";
 
 //Redux stuff
 import { connect } from "react-redux";
-import { logoutUser, uploadImage } from '../redux/actions/userActions'
+import { logoutUser, uploadImage } from "../../redux/actions/userActions";
 
 const styles = (theme) => ({
   ...theme.spread,
   typography: {
-    useNextVariants: true
+    useNextVariants: true,
   },
   form: {
-    textAlign: 'center'
+    textAlign: "center",
   },
   image: {
-    margin: '20px auto 20px auto'
+    margin: "20px auto 20px auto",
   },
   pageTitle: {
-    margin: '10px auto 10px auto'
+    margin: "10px auto 10px auto",
   },
   textField: {
-    margin: '10px auto 10px auto'
+    margin: "10px auto 10px auto",
   },
   button: {
     marginTop: 20,
-    position: 'relative'
+    position: "relative",
   },
   customError: {
-    color: 'red',
-    fontSize: '0.8rem',
-    marginTop: 10
+    color: "red",
+    fontSize: "0.8rem",
+    marginTop: 10,
   },
   progress: {
-    position: 'absolute'
+    position: "absolute",
   },
   invisibleSeparator: {
-    border: 'none',
-    margin: 4
+    border: "none",
+    margin: 4,
   },
   visibleSeparator: {
-    width: '100%',
-    borderBottom: '1px solid rgba(0,0,0,0.1)',
-    marginBottom: 20
+    width: "100%",
+    borderBottom: "1px solid rgba(0,0,0,0.1)",
+    marginBottom: 20,
   },
 
-
   buttons: {
-    textAlign: 'center',
-    '& a': {
-      margin: '20px 10px'
-    }
+    textAlign: "center",
+    "& a": {
+      margin: "20px 10px",
+    },
   },
   paper: {
     padding: 20,
@@ -109,26 +108,22 @@ const styles = (theme) => ({
       },
     },
   },
-  
-
 });
-
-
 
 class Profile extends Component {
   handleImageChange = (event) => {
     const image = event.target.files[0];
     const formData = new FormData();
-    formData.append('image', image, image.name);
+    formData.append("image", image, image.name);
     this.props.uploadImage(formData);
   };
-  handleEditPicture= () => {
-    const fileInput = document.getElementById('imageInput');
+  handleEditPicture = () => {
+    const fileInput = document.getElementById("imageInput");
     fileInput.click();
   };
   handleLogout = () => {
     this.props.logoutUser();
-  }
+  };
   render() {
     const {
       classes,
@@ -144,16 +139,17 @@ class Profile extends Component {
           <div className={classes.profile}>
             <div className="image-wrapper">
               <img src={imageUrl} alt="profile" className="profile-image" />
-              <input 
-              type="file" 
-              id="imageInput" 
-              hidden = "hidden"
-              onChange={this.handleImageChange}/>
-             <Tooltip title="Edit profile picture" placement="top">
-             <IconButton onClick={this.handleEditPicture} className="button">
-                <EditIcon color="primary" />
-              </IconButton>
-             </Tooltip>
+              <input
+                type="file"
+                id="imageInput"
+                hidden="hidden"
+                onChange={this.handleImageChange}
+              />
+              <Tooltip title="Edit profile picture" placement="top">
+                <IconButton onClick={this.handleEditPicture} className="button">
+                  <EditIcon color="primary" />
+                </IconButton>
+              </Tooltip>
             </div>
             <hr />
             <div className="profile-details">
@@ -190,10 +186,10 @@ class Profile extends Component {
             </div>
             <Tooltip title="Logout" placement="top">
               <IconButton onClick={this.handleLogout}>
-                <KeyboardReturn color="primary"/>
+                <KeyboardReturn color="primary" />
               </IconButton>
             </Tooltip>
-            <EditDetails/>
+            <EditDetails />
           </div>
         </Paper>
       ) : (
@@ -241,4 +237,7 @@ Profile.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default connect(mapStateToProps, mapActionsToProps)(withStyles(styles)(Profile));
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(withStyles(styles)(Profile));
