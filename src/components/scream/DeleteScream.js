@@ -18,7 +18,7 @@ const styles = (theme) => ({
   ...theme.spread,
   deleteButton: {
     position: "absolute",
-    left: "60%",
+    left: "55%",
   },
 });
 
