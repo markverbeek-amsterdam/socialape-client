@@ -31,6 +31,7 @@ export default {
   },
   button: {
     marginTop: 20,
+    marginBottom: 20,
     position: "relative",
   },
   customError: {
@@ -91,6 +92,7 @@ export default {
   },
   buttons: {
     textAlign: "center",
+    margin: "20px 10px 10 px 10 px",
     "& a": {
       margin: "20px 10px",
     },

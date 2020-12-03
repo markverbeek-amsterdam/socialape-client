@@ -12,7 +12,17 @@ import { connect } from "react-redux";
 import { submitComment } from "../../redux/actions/dataActions";
 
 const styles = (theme) => ({
-  ...theme.spread
+  ...theme.spread,
+
+  visibleSeparator: {
+    width: "100%",
+    borderBottom: "1px solid rgba(0,0,0,0.1)",
+    marginBottom: "20 px",
+  },
+
+  button: {
+    marginTop: "20 px",
+  },
 });
 
 class CommentForm extends Component {
@@ -55,6 +65,7 @@ class CommentForm extends Component {
             fullWidth
             className={classes.textField}
           />
+          <p></p>
           <Button
             type="submit"
             variant="contained"
@@ -64,6 +75,7 @@ class CommentForm extends Component {
             Submit
           </Button>
         </form>
+        <p></p>
         <hr className={classes.visibleSeparator} />
       </Grid>
     ) : null;
