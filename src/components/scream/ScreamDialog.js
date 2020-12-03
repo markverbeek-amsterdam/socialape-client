@@ -68,10 +68,12 @@ class ScreamDialog extends Component {
     newPath: "",
   };
   componentDidMount() {
-    if (this.props.openDialog) {
-      this.handleOpen();
-    }
+    // if (this.props.openDialog) {
+    //   this.handleOpen();
+    // }
+    this.handleOpen();
   }
+
   handleOpen = () => {
     let oldPath = window.location.pathname;
 
