@@ -17,10 +17,11 @@ import { logoutUser, getUserData } from "./redux/actions/userActions";
 import Navbar from "./components/layout/Navbar";
 import AuthRoute from "./util/AuthRoute";
 
-// Page
+// Pages
 import home from "./pages/home";
 import login from "./pages/login";
 import signup from "./pages/signup";
+import user from "./pages/user";
 
 import axios from "axios";
 
