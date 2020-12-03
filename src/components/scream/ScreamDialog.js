@@ -176,7 +176,7 @@ class ScreamDialog extends Component {
 ScreamDialog.propTypes = {
   clearErrors: PropTypes.func.isRequired,
   getScream: PropTypes.func.isRequired,
-  screamIdL: PropTypes.string.isRequired,
+  screamId: PropTypes.string.isRequired,
   userHandle: PropTypes.string.isRequired,
   scream: PropTypes.object.isRequired,
   UI: PropTypes.object.isRequired,
