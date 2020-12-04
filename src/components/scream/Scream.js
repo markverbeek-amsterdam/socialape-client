@@ -21,7 +21,9 @@ import ChatIcon from "@material-ui/icons/Chat";
 //Redux
 import { connect } from "react-redux";
 
-const styles = {
+const styles = (theme) => ({
+  ...theme.spread,
+
   card: {
     display: "flex",
     marginBottom: 20,
@@ -33,7 +35,7 @@ const styles = {
     padding: 25,
     objectFit: "cover",
   },
-};
+});
 
 export class Scream extends Component {
   render() {
